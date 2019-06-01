@@ -1,5 +1,5 @@
 P=bj
-OBJECTS=bj.o card.o
+OBJECTS=bj.o card.o shoe.o
 CC=g++
 
 $P: $(OBJECTS)
