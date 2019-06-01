@@ -41,8 +41,8 @@ private:
     CardSuit(std::string name, std::string symbol);
 
 public:
-    std::string get_name() { return name_; }
-    std::string get_symbol() { return symbol_; }
+    std::string get_name() const { return name_; }
+    std::string get_symbol() const { return symbol_; }
 
     static std::vector<CardSuit> suits();
 
