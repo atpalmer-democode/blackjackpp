@@ -49,8 +49,7 @@ class Hand {
 protected:
     std::vector<Card> cards_;
 
-    Hand(std::vector<Card> cards) {
-        cards_ = cards;
+    Hand(std::vector<Card> cards): cards_(cards) {
     }
 public:
     template<class T>
