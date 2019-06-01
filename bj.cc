@@ -37,7 +37,7 @@ public:
             }
         }
 
-        std::srand(std::time(NULL));
+        std::srand(std::time(nullptr));
         std::random_shuffle(cards.begin(), cards.end());
 
         return Shoe(cards);
