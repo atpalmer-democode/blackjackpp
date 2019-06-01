@@ -1,7 +1,3 @@
-#include <algorithm>
-#include <cassert>
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
 #include <vector>
 #include "card.h"
