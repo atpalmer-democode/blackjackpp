@@ -45,7 +45,7 @@ public:
 };
 
 
-int main(void) {
+int main() {
     Shoe s = Shoe::decks(4);
     std::cout << s.draw_card() << std::endl;
     return 0;
