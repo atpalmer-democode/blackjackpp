@@ -64,6 +64,24 @@ public:
         cards_.push_back(card);
     }
 
+    int value() {
+        int result = 0;
+        int aces = 0;
+        for(Card c : cards_) {
+            result += c.get_rank().get_value();
+            if(c.is_ace()) {
+                ++aces;
+            }
+        }
+        while(aces--) {
+            if(result + 10 > 21) {
+                break;
+            }
+            result += 10;
+        }
+        return result;
+    }
+
     friend std::ostream &operator <<(std::ostream &s, Hand &h);
 };
 
@@ -100,7 +118,7 @@ int main() {
     Shoe shoe = Shoe::decks(4);
     Hand player_hand = Hand::init_from <Hand> (shoe);
     DealerHand dealer_hand = Hand::init_from <DealerHand> (shoe);
-    std::cout << player_hand << std::endl;
+    std::cout << player_hand << " (Value:" << player_hand.value() << ")" << std::endl;
     std::cout << dealer_hand << std::endl;
     return 0;
 }

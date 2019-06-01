@@ -14,6 +14,7 @@ private:
 
 public:
     std::string get_name() const { return name_; }
+    int get_value() const { return value_; }
 
     static std::vector<CardRank> ranks();
 
@@ -30,6 +31,10 @@ public:
     static const CardRank RJ;
     static const CardRank RQ;
     static const CardRank RK;
+
+    bool operator ==(const CardRank &other) const {
+        return this->name_ == other.name_;
+    }
 };
 
 
@@ -61,6 +66,7 @@ private:
 public:
     Card(const CardRank &rank, const CardSuit &suit);
 
+    bool is_ace() const { return rank_ == CardRank::RA; }
     CardRank get_rank() const { return rank_; }
     CardSuit get_suit() const { return suit_; }
 };
