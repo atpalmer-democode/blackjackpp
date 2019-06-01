@@ -8,8 +8,8 @@
 #include "shoe.h"
 
 
-Shoe::Shoe(std::vector<Card> cards) {
-    cards_ = cards;
+Shoe::Shoe(std::vector<Card> cards)
+    : cards_(cards) {
 }
 
 
