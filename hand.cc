@@ -46,6 +46,11 @@ int Hand::value() {
 }
 
 
+bool Hand::is_busted() {
+    return this->value() > 21;
+}
+
+
 std::ostream &operator <<(std::ostream &s, Hand &h) {
     for(Card c : h.cards_) {
         s << c << ' ';

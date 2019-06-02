@@ -19,6 +19,7 @@ public:
 
     void add(Card card);
     int value();
+    bool is_busted();
 
     friend std::ostream &operator <<(std::ostream &s, Hand &h);
 };

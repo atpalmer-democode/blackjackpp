@@ -15,7 +15,7 @@ void play_turn(Hand player_hand, DealerHand dealer_hand, Shoe shoe) {
         std::cout << "Player: " << player_hand << std::endl;
         std::cout << "Dealer: " << dealer_hand << std::endl;
 
-        if(player_hand.value() > 21) {
+        if(player_hand.is_busted()) {
             std::cout << "BUSTED!" << std::endl;
             break;
         }
