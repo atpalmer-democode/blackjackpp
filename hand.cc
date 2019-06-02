@@ -63,6 +63,10 @@ DealerHand::DealerHand(std::vector<Card> cards) : Hand(cards) {
 }
 
 
+bool DealerHand::wants_card() {
+    return this->value() < 17;
+}
+
 std::ostream &operator <<(std::ostream &s, DealerHand &h) {
     s << "🂠 " << ' ';
     std::vector<Card>::iterator ptr = h.cards_.begin();

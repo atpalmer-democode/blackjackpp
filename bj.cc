@@ -36,8 +36,8 @@ void play_turn(Hand player_hand, DealerHand dealer_hand, Shoe shoe) {
 }
 
 
-void dealer_turn(Hand &dealer_hand, Shoe &shoe) {
-    while(dealer_hand.value() < 17) {
+void dealer_turn(DealerHand &dealer_hand, Shoe &shoe) {
+    while(dealer_hand.wants_card()) {
         dealer_hand.add(shoe.draw_card());
     }
 }
