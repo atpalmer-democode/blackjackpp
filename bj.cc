@@ -43,6 +43,35 @@ void dealer_turn(DealerHand &dealer_hand, Shoe &shoe) {
 }
 
 
+double score_bet_multiplier(Hand player_hand, DealerHand dealer_hand) {
+    if(player_hand.is_busted()) {
+        return -1;
+    }
+
+    if(player_hand.has_blackjack() && !dealer_hand.has_blackjack()) {
+        return 1.5;
+    }
+
+    if(dealer_hand.has_blackjack() && !player_hand.has_blackjack()) {
+        return -1;
+    }
+
+    if(dealer_hand.is_busted()) {
+        return 1;
+    }
+
+    if(player_hand.value() > dealer_hand.value()) {
+        return 1;
+    }
+
+    if(player_hand.value() == dealer_hand.value()) {
+        return 0;
+    }
+
+    return -1;
+}
+
+
 int main() {
     auto shoe = Shoe::decks(4);
     auto player_hand = Hand::init_from<Hand>(shoe);
@@ -54,4 +83,7 @@ int main() {
     auto exposed_dealer_hand = Hand(dealer_hand);
     std::cout << "Player: " << player_hand << std::endl;
     std::cout << "Dealer: " << exposed_dealer_hand << std::endl;
+
+    double multiplier = score_bet_multiplier(player_hand, dealer_hand);
+    std::cout << "Bet × " << multiplier << std::endl;
 }
