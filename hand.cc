@@ -50,7 +50,7 @@ std::ostream &operator <<(std::ostream &s, Hand &h) {
     for(Card c : h.cards_) {
         s << c << ' ';
     }
-    return s;
+    return s << "(Value:" << h.value() << ")";
 }
 
 

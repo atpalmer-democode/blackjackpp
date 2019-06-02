@@ -12,7 +12,7 @@ void play_turn(Hand player_hand, DealerHand dealer_hand, Shoe shoe) {
     }
 
     for(;;) {
-        std::cout << "Player: " << player_hand << " (Value:" << player_hand.value() << ")" << std::endl;
+        std::cout << "Player: " << player_hand << std::endl;
         std::cout << "Dealer: " << dealer_hand << std::endl;
 
         if(player_hand.value() > 21) {
