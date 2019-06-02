@@ -6,7 +6,7 @@
 
 
 void play_turn(Hand player_hand, DealerHand dealer_hand, Shoe shoe) {
-    if(player_hand.value() == 21) {
+    if(player_hand.has_blackjack()) {
         std::cout << "BLACKJACK!" << std::endl;
         return;
     }

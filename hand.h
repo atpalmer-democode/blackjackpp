@@ -20,6 +20,7 @@ public:
     void add(Card card);
     int value();
     bool is_busted();
+    bool has_blackjack();
 
     friend std::ostream &operator <<(std::ostream &s, Hand &h);
 };

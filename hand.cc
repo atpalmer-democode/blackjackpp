@@ -51,6 +51,11 @@ bool Hand::is_busted() {
 }
 
 
+bool Hand::has_blackjack() {
+    return this->cards_.size() == 2 && this->value() == 21;
+}
+
+
 std::ostream &operator <<(std::ostream &s, Hand &h) {
     for(Card c : h.cards_) {
         s << c << ' ';
