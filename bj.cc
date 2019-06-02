@@ -33,6 +33,10 @@ void play_turn(Hand player_hand, DealerHand dealer_hand, Shoe shoe) {
             break;
         }
     }
+
+    auto exposed_dealer_hand = Hand(dealer_hand);
+    std::cout << "Player: " << player_hand << std::endl;
+    std::cout << "Dealer: " << exposed_dealer_hand << std::endl;
 }
 
 
