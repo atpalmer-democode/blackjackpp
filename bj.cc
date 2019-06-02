@@ -46,6 +46,4 @@ int main() {
     auto dealer_hand = Hand::init_from<DealerHand>(shoe);
 
     play_turn(player_hand, dealer_hand, shoe);
-
-    return 0;
 }
