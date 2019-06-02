@@ -41,9 +41,9 @@ void play_turn(Hand player_hand, DealerHand dealer_hand, Shoe shoe) {
 
 
 int main() {
-    Shoe shoe = Shoe::decks(4);
-    Hand player_hand = Hand::init_from <Hand> (shoe);
-    DealerHand dealer_hand = Hand::init_from <DealerHand> (shoe);
+    auto shoe = Shoe::decks(4);
+    auto player_hand = Hand::init_from<Hand>(shoe);
+    auto dealer_hand = Hand::init_from<DealerHand>(shoe);
 
     play_turn(player_hand, dealer_hand, shoe);
 
