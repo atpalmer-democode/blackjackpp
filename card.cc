@@ -23,24 +23,21 @@ const CardRank CardRank::RQ("Q", 10);
 const CardRank CardRank::RK("K", 10);
 
 
-std::array<CardRank, 13> CardRank::ranks() {
-    std::array<CardRank, 13> ranks = {
-        CardRank::RA,
-        CardRank::R2,
-        CardRank::R3,
-        CardRank::R4,
-        CardRank::R5,
-        CardRank::R6,
-        CardRank::R7,
-        CardRank::R8,
-        CardRank::R9,
-        CardRank::RT,
-        CardRank::RJ,
-        CardRank::RQ,
-        CardRank::RK,
-    };
-    return ranks;
-}
+const std::array<CardRank, 13> CardRank::RANKS = {
+    CardRank::RA,
+    CardRank::R2,
+    CardRank::R3,
+    CardRank::R4,
+    CardRank::R5,
+    CardRank::R6,
+    CardRank::R7,
+    CardRank::R8,
+    CardRank::R9,
+    CardRank::RT,
+    CardRank::RJ,
+    CardRank::RQ,
+    CardRank::RK,
+};
 
 
 CardSuit::CardSuit(std::string name, std::string symbol)
@@ -54,15 +51,12 @@ const CardSuit CardSuit::Diamonds("Diamonds", "♦");
 const CardSuit CardSuit::Clubs("Clubs", "♣");
 
 
-std::array<CardSuit, 4> CardSuit::suits() {
-    std::array<CardSuit, 4> suits = {
-        CardSuit::Spades,
-        CardSuit::Hearts,
-        CardSuit::Diamonds,
-        CardSuit::Clubs,
-    };
-    return suits;
-}
+const std::array<CardSuit, 4> CardSuit::SUITS = {
+    CardSuit::Spades,
+    CardSuit::Hearts,
+    CardSuit::Diamonds,
+    CardSuit::Clubs,
+};
 
 
 Card::Card(const CardRank &rank, const CardSuit &suit)

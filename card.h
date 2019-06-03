@@ -15,7 +15,7 @@ public:
     std::string get_name() const { return name_; }
     int get_value() const { return value_; }
 
-    static std::array <CardRank, 13> ranks();
+    static const std::array <CardRank, 13> RANKS;
 
     static const CardRank RA;
     static const CardRank R2;
@@ -48,7 +48,7 @@ public:
     std::string get_name() const { return name_; }
     std::string get_symbol() const { return symbol_; }
 
-    static std::array<CardSuit, 4> suits();
+    static const std::array<CardSuit, 4> SUITS;
 
     static const CardSuit Spades;
     static const CardSuit Hearts;
