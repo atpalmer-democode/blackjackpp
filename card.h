@@ -2,7 +2,6 @@
 #define CARD_H
 
 #include <array>
-#include "card.h"
 
 
 class CardRank {
