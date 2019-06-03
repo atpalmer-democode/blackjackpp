@@ -2,7 +2,6 @@
 #define CARD_H
 
 #include <array>
-#include <vector>
 #include "card.h"
 
 
@@ -50,7 +49,7 @@ public:
     std::string get_name() const { return name_; }
     std::string get_symbol() const { return symbol_; }
 
-    static std::vector<CardSuit> suits();
+    static std::array<CardSuit, 4> suits();
 
     static const CardSuit Spades;
     static const CardSuit Hearts;

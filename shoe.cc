@@ -26,7 +26,7 @@ Shoe Shoe::decks(int decks) {
 
     std::vector<Card> cards;
     std::array<CardRank, 13> ranks = CardRank::ranks();
-    std::vector<CardSuit> suits = CardSuit::suits();
+    std::array<CardSuit, 4> suits = CardSuit::suits();
 
     for(int i = 0; i < decks; ++i) {
         for(const CardSuit &suit : suits) {

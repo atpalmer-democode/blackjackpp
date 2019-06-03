@@ -1,5 +1,4 @@
 #include <array>
-#include <vector>
 #include <string>
 #include "card.h"
 
@@ -55,13 +54,13 @@ const CardSuit CardSuit::Diamonds("Diamonds", "♦");
 const CardSuit CardSuit::Clubs("Clubs", "♣");
 
 
-std::vector<CardSuit> CardSuit::suits() {
-    std::vector<CardSuit> suits;
-    suits.reserve(4);
-    suits.push_back(CardSuit::Spades);
-    suits.push_back(CardSuit::Hearts);
-    suits.push_back(CardSuit::Diamonds);
-    suits.push_back(CardSuit::Clubs);
+std::array<CardSuit, 4> CardSuit::suits() {
+    std::array<CardSuit, 4> suits = {
+        CardSuit::Spades,
+        CardSuit::Hearts,
+        CardSuit::Diamonds,
+        CardSuit::Clubs,
+    };
     return suits;
 }
 
