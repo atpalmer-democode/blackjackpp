@@ -65,7 +65,7 @@ private:
 public:
     Card(const CardRank &rank, const CardSuit &suit);
 
-    bool is_ace() const { return rank_ == CardRank::RA; }
+    bool is_ace() const { return rank_.get_name() == "A"; }
     CardRank get_rank() const { return rank_; }
     CardSuit get_suit() const { return suit_; }
 };

@@ -8,35 +8,20 @@ CardRank::CardRank(std::string name, int value)
 }
 
 
-const CardRank CardRank::RA("A", 1);
-const CardRank CardRank::R2("2", 2);
-const CardRank CardRank::R3("3", 3);
-const CardRank CardRank::R4("4", 4);
-const CardRank CardRank::R5("5", 5);
-const CardRank CardRank::R6("6", 6);
-const CardRank CardRank::R7("7", 7);
-const CardRank CardRank::R8("8", 8);
-const CardRank CardRank::R9("9", 9);
-const CardRank CardRank::RT("T", 10);
-const CardRank CardRank::RJ("J", 10);
-const CardRank CardRank::RQ("Q", 10);
-const CardRank CardRank::RK("K", 10);
-
-
 const std::array<CardRank, 13> CardRank::RANKS = {
-    CardRank::RA,
-    CardRank::R2,
-    CardRank::R3,
-    CardRank::R4,
-    CardRank::R5,
-    CardRank::R6,
-    CardRank::R7,
-    CardRank::R8,
-    CardRank::R9,
-    CardRank::RT,
-    CardRank::RJ,
-    CardRank::RQ,
-    CardRank::RK,
+    CardRank("A", 1),
+    CardRank("2", 2),
+    CardRank("3", 3),
+    CardRank("4", 4),
+    CardRank("5", 5),
+    CardRank("6", 6),
+    CardRank("7", 7),
+    CardRank("8", 8),
+    CardRank("9", 9),
+    CardRank("T", 10),
+    CardRank("J", 10),
+    CardRank("Q", 10),
+    CardRank("K", 10),
 };
 
 
