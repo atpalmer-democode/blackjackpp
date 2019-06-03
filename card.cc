@@ -1,3 +1,4 @@
+#include <array>
 #include <vector>
 #include <string>
 #include "card.h"
@@ -23,22 +24,22 @@ const CardRank CardRank::RQ("Q", 10);
 const CardRank CardRank::RK("K", 10);
 
 
-std::vector<CardRank> CardRank::ranks() {
-    std::vector<CardRank> ranks;
-    ranks.reserve(13);
-    ranks.push_back(CardRank::RA);
-    ranks.push_back(CardRank::R2);
-    ranks.push_back(CardRank::R3);
-    ranks.push_back(CardRank::R4);
-    ranks.push_back(CardRank::R5);
-    ranks.push_back(CardRank::R6);
-    ranks.push_back(CardRank::R7);
-    ranks.push_back(CardRank::R8);
-    ranks.push_back(CardRank::R9);
-    ranks.push_back(CardRank::RT);
-    ranks.push_back(CardRank::RJ);
-    ranks.push_back(CardRank::RQ);
-    ranks.push_back(CardRank::RK);
+std::array<CardRank, 13> CardRank::ranks() {
+    std::array<CardRank, 13> ranks = {
+        CardRank::RA,
+        CardRank::R2,
+        CardRank::R3,
+        CardRank::R4,
+        CardRank::R5,
+        CardRank::R6,
+        CardRank::R7,
+        CardRank::R8,
+        CardRank::R9,
+        CardRank::RT,
+        CardRank::RJ,
+        CardRank::RQ,
+        CardRank::RK,
+    };
     return ranks;
 }
 

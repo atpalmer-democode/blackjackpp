@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <array>
 #include <cassert>
 #include <cstdlib>
 #include <ctime>
@@ -24,7 +25,7 @@ Shoe Shoe::decks(int decks) {
     assert(decks > 0);
 
     std::vector<Card> cards;
-    std::vector<CardRank> ranks = CardRank::ranks();
+    std::array<CardRank, 13> ranks = CardRank::ranks();
     std::vector<CardSuit> suits = CardSuit::suits();
 
     for(int i = 0; i < decks; ++i) {

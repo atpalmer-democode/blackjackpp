@@ -1,6 +1,7 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include <array>
 #include <vector>
 #include "card.h"
 
@@ -16,7 +17,7 @@ public:
     std::string get_name() const { return name_; }
     int get_value() const { return value_; }
 
-    static std::vector<CardRank> ranks();
+    static std::array <CardRank, 13> ranks();
 
     static const CardRank RA;
     static const CardRank R2;
