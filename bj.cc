@@ -80,9 +80,8 @@ int main() {
     play_turn(player_hand, dealer_hand, shoe);
     dealer_turn(dealer_hand, shoe);
 
-    auto exposed_dealer_hand = Hand(dealer_hand);
     std::cout << "Player: " << player_hand << std::endl;
-    std::cout << "Dealer: " << exposed_dealer_hand << std::endl;
+    std::cout << "Dealer: " << Hand(dealer_hand) << std::endl;
 
     double multiplier = score_bet_multiplier(player_hand, dealer_hand);
     std::cout << "Bet × " << multiplier << std::endl;
