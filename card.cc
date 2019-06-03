@@ -45,17 +45,11 @@ CardSuit::CardSuit(std::string name, std::string symbol)
 }
 
 
-const CardSuit CardSuit::Spades("Spades", "♠");
-const CardSuit CardSuit::Hearts("Hearts", "♥");
-const CardSuit CardSuit::Diamonds("Diamonds", "♦");
-const CardSuit CardSuit::Clubs("Clubs", "♣");
-
-
 const std::array<CardSuit, 4> CardSuit::SUITS = {
-    CardSuit::Spades,
-    CardSuit::Hearts,
-    CardSuit::Diamonds,
-    CardSuit::Clubs,
+    CardSuit("Spades", "♠"),
+    CardSuit("Hearts", "♥"),
+    CardSuit("Diamonds", "♦"),
+    CardSuit("Clubs", "♣"),
 };
 
 
