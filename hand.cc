@@ -27,7 +27,7 @@ void Hand::add(Card card) {
 }
 
 
-int Hand::value() {
+int Hand::value() const {
     int result = 0;
     int aces = 0;
     for(Card c : cards_) {
@@ -56,7 +56,7 @@ bool Hand::has_blackjack() {
 }
 
 
-std::ostream &operator <<(std::ostream &s, Hand &h) {
+std::ostream &operator <<(std::ostream &s, const Hand &h) {
     for(Card c : h.cards_) {
         s << c << ' ';
     }
@@ -72,9 +72,9 @@ bool DealerHand::wants_card() {
     return this->value() < 17;
 }
 
-std::ostream &operator <<(std::ostream &s, DealerHand &h) {
+std::ostream &operator <<(std::ostream &s, const DealerHand &h) {
     s << "🂠 " << ' ';
-    std::vector<Card>::iterator ptr = h.cards_.begin();
+    std::vector<Card>::const_iterator ptr = h.cards_.cbegin();
     ++ptr;
     for(;ptr < h.cards_.end(); ++ptr) {
         s << *ptr << ' ';

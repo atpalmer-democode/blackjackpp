@@ -18,11 +18,11 @@ public:
     static T init_from(Shoe &s);
 
     void add(Card card);
-    int value();
+    int value() const;
     bool is_busted();
     bool has_blackjack();
 
-    friend std::ostream &operator <<(std::ostream &s, Hand &h);
+    friend std::ostream &operator <<(std::ostream &s, const Hand &h);
 };
 
 
@@ -31,11 +31,11 @@ public:
     DealerHand(std::vector<Card> cards);
     bool wants_card();
 
-    friend std::ostream &operator <<(std::ostream &s, DealerHand &h);
+    friend std::ostream &operator <<(std::ostream &s, const DealerHand &h);
 };
 
 
-std::ostream &operator <<(std::ostream &s, Hand &h);
-std::ostream &operator <<(std::ostream &s, DealerHand &h);
+std::ostream &operator <<(std::ostream &s, const Hand &h);
+std::ostream &operator <<(std::ostream &s, const DealerHand &h);
 
 #endif
