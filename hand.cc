@@ -5,7 +5,10 @@
 #include "shoe.h"
 
 
-Hand::Hand(std::vector<Card> cards): cards_(cards) {
+Hand::Hand(std::vector<Card> cards) {
+    for(Card card : cards) {
+        this->add(card);
+    }
 }
 
 
