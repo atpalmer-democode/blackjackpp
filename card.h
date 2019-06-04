@@ -49,6 +49,7 @@ public:
     bool is_ace() const { return rank_.get_name() == "A"; }
     CardRank get_rank() const { return rank_; }
     CardSuit get_suit() const { return suit_; }
+    int get_value() const { return rank_.get_value(); }
 };
 
 std::ostream &operator <<(std::ostream &stream, const Card &card);

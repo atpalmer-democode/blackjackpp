@@ -31,7 +31,7 @@ int Hand::value() const {
     int result = 0;
     int aces = 0;
     for(Card c : cards_) {
-        result += c.get_rank().get_value();
+        result += c.get_value();
         if(c.is_ace()) {
             ++aces;
         }
