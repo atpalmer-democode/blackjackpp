@@ -5,6 +5,25 @@
 #include "shoe.h"
 
 
+static int calculate_value(const std::vector<Card> &cards) {
+    int result = 0;
+    int aces = 0;
+    for(Card c : cards) {
+        result += c.get_value();
+        if(c.is_ace()) {
+            ++aces;
+        }
+    }
+    while(aces--) {
+        if(result + 10 > 21) {
+            break;
+        }
+        result += 10;
+    }
+    return result;
+}
+
+
 Hand::Hand(std::vector<Card> cards) {
     for(Card card : cards) {
         this->add(card);
@@ -31,21 +50,7 @@ void Hand::add(Card card) {
 
 
 int Hand::value() const {
-    int result = 0;
-    int aces = 0;
-    for(Card c : cards_) {
-        result += c.get_value();
-        if(c.is_ace()) {
-            ++aces;
-        }
-    }
-    while(aces--) {
-        if(result + 10 > 21) {
-            break;
-        }
-        result += 10;
-    }
-    return result;
+    return calculate_value(cards_);
 }
 
 
