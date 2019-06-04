@@ -43,7 +43,7 @@ void dealer_turn(DealerHand &dealer_hand, Shoe &shoe) {
 }
 
 
-double score_bet_multiplier(Hand player_hand, DealerHand dealer_hand) {
+double score_bet_multiplier(const Hand &player_hand, const DealerHand &dealer_hand) {
     if(player_hand.is_busted()) {
         return -1;
     }
