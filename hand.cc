@@ -46,12 +46,12 @@ int Hand::value() const {
 }
 
 
-bool Hand::is_busted() {
+bool Hand::is_busted() const {
     return this->value() > 21;
 }
 
 
-bool Hand::has_blackjack() {
+bool Hand::has_blackjack() const {
     return this->cards_.size() == 2 && this->value() == 21;
 }
 
@@ -68,7 +68,7 @@ DealerHand::DealerHand(std::vector<Card> cards) : Hand(cards) {
 }
 
 
-bool DealerHand::wants_card() {
+bool DealerHand::wants_card() const {
     return this->value() < 17;
 }
 
