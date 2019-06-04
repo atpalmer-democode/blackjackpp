@@ -5,7 +5,7 @@
 #include "hand.h"
 
 
-void play_turn(Hand &player_hand, DealerHand dealer_hand, Shoe shoe) {
+void play_turn(Hand &player_hand, const DealerHand &dealer_hand, Shoe &shoe) {
     if(player_hand.has_blackjack()) {
         std::cout << "BLACKJACK!" << std::endl;
         return;
