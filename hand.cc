@@ -46,11 +46,7 @@ template DealerHand Hand::init_from<DealerHand>(Shoe &s);
 
 void Hand::add(Card card) {
     cards_.push_back(card);
-}
-
-
-int Hand::value() const {
-    return calculate_value(cards_);
+    cached_value_ = calculate_value(cards_);
 }
 
 

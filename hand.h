@@ -10,6 +10,7 @@
 class Hand {
 protected:
     std::vector<Card> cards_;
+    int cached_value_;
 
     Hand(std::vector<Card> cards);
 
@@ -18,7 +19,7 @@ public:
     static T init_from(Shoe &s);
 
     void add(Card card);
-    int value() const;
+    int value() const { return cached_value_; }
     bool is_busted() const;
     bool has_blackjack() const;
 
