@@ -7,10 +7,20 @@
 #include "shoe.h"
 
 
+struct HandValue {
+    bool is_soft;
+    int value;
+
+    HandValue(bool is_soft=false, int value=0)
+        : is_soft(is_soft), value(value) {
+    }
+};
+
+
 class Hand {
 protected:
     std::vector<Card> cards_;
-    int cached_value_;
+    HandValue cached_value_;
 
     Hand(std::vector<Card> cards);
 
@@ -19,7 +29,7 @@ public:
     static T init_from(Shoe &s);
 
     void add(Card card);
-    int value() const { return cached_value_; }
+    int value() const { return cached_value_.value; }
     bool is_busted() const;
     bool has_blackjack() const;
 

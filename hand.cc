@@ -5,20 +5,21 @@
 #include "shoe.h"
 
 
-static int calculate_value(const std::vector<Card> &cards) {
-    int result = 0;
+static HandValue calculate_value(const std::vector<Card> &cards) {
+    HandValue result(false, 0);
     int aces = 0;
     for(Card c : cards) {
-        result += c.get_value();
+        result.value += c.get_value();
         if(c.is_ace()) {
             ++aces;
         }
     }
     while(aces--) {
-        if(result + 10 > 21) {
+        if(result.value + 10 > 21) {
             break;
         }
-        result += 10;
+        result.value += 10;
+        result.is_soft = true;
     }
     return result;
 }
