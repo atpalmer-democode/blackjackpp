@@ -74,7 +74,15 @@ DealerHand::DealerHand(std::vector<Card> cards) : Hand(cards) {
 
 
 bool DealerHand::wants_card() const {
-    return this->value() < 17;
+    if(cached_value_.value < 17) {
+        return true;
+    }
+
+    if(cached_value_.value == 17) {
+        return cached_value_.is_soft;
+    }
+
+    return false;
 }
 
 std::ostream &operator <<(std::ostream &s, const DealerHand &h) {
